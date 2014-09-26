@@ -1,0 +1,69 @@
+html {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+body {
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+	text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.1);
+	margin-top: 50px;
+	padding-top: 30px;
+	background-color: #637D35
+}
+.navbar .app-toggle {
+	height: 20px;
+	padding-top: 3px;
+}
+.pod {
+	height: 300px;
+	margin-bottom: 30px;
+	position: relative;
+}
+.pod-background {
+	border-radius: 4px;
+}
+.pod-content {
+	z-index: 100;
+	border-radius: 3px;
+	height: 100%;
+	padding: 20px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: column wrap;
+    flex-flow: column wrap;
+}
+
+.pod-content > * {
+    -webkit-flex: 1 auto;
+    flex: 1 auto;
+    text-align: center;
+}
+
+.pod h2 {
+	margin: 0;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+}
+
+.pod .pod-icon {
+    border: 2px solid #BACF8B;
+    border-radius: 100%;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.pod .pod-icon img {
+    width: 100%;
+    border-radius: 100%;
+    border: 2px solid transparent;
+}
+.pod .pod-subtext {
+	align-self: center;
+	text-align: center;
+}
+.pod-subtext .number {
+	color: darkorange;
+}
