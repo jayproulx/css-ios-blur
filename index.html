@@ -1,0 +1,94 @@
+<html ng-app="skins">
+
+<head>
+	<link rel="stylesheet" type="text/css" href="components/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="dist/fonts/lato.css" id="font" />
+	<link rel="stylesheet" type="text/css" href="dist/index.css" />
+	<link rel="stylesheet" type="text/css" href="dist/skins/ios7.css" id="skin" />
+</head>
+
+<body ng-controller="NavCtrl">
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">CSS blurred element effects</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Skins
+						<b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu">
+						<li ng-class="{'disabled': selectedSkin == 'default'}">
+							<a href="#" ng-click="setSkin('default')">Default</a>
+						</li>
+						<li ng-class="{'disabled': selectedSkin == 'default-blurred'}">
+							<a href="#" ng-click="setSkin('default-blurred')">Default Blurred</a>
+						</li>
+						<li ng-class="{'disabled': selectedSkin == 'ios7'}">
+							<a href="#" ng-click="setSkin('ios7')">iOS7 light</a>
+						</li>
+						<li ng-class="{'disabled': selectedSkin == 'ios7-dark'}">
+							<a href="#" ng-click="setSkin('ios7-dark')">iOS7 Dark</a>
+						</li>
+						<li ng-class="{'disabled': selectedSkin == 'lens-light'}">
+							<a href="#" ng-click="setSkin('lens-light')">Lens Light</a>
+						</li>
+						<li ng-class="{'disabled': selectedSkin == 'lens-dark'}">
+							<a href="#" ng-click="setSkin('lens-dark')">Lens Dark</a>
+						</li>
+					</ul>
+				</li>
+				<!--<li class="dropdown">-->
+					<!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">Fonts-->
+						<!--<b class="caret"></b>-->
+					<!--</a>-->
+					<!--<ul class="dropdown-menu">-->
+						<!--<li ng-class="{'disabled': selectedFont == 'system'}">-->
+							<!--<a href="#" ng-click="setFont('system')">System</a>-->
+						<!--</li>-->
+						<!--<li ng-class="{'disabled': selectedFont == 'lato'}">-->
+							<!--<a href="#" ng-click="setFont('lato')">Lato 100,300</a>-->
+						<!--</li>-->
+						<!--<li ng-class="{'disabled': selectedFont == 'pt-sans'}">-->
+							<!--<a href="#" ng-click="setFont('pt-sans')">PT Sans 400,700</a>-->
+						<!--</li>-->
+					<!--</ul>-->
+				<!--</li>-->
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+			</ul>
+		</div>
+		<!-- /.navbar-collapse -->
+	</nav>
+
+	<div class="container">
+
+		<div class="pod col-xs-3" ng-repeat="userResult in users">
+			<div class="pod-background">
+				<div class="pod-content">
+                    <h2>{{ userResult.user.name.first | titlecase }} {{ userResult.user.name.last | titlecase }}</h2>
+                    <div>
+                        <div class="pod-icon"><img ng-src="{{ userResult.user.picture }}"></div>
+                    </div>
+                    <div class="pod-subtext">{{ userResult.user.email }}</div>
+                </div>
+			</div>
+		</div>
+
+	</div>
+
+	<script src="dist/vendor.js"></script>
+	<script src="dist/app.js"></script>
+</body>
+
+</html>
